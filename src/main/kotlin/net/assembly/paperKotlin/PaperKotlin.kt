@@ -2,13 +2,12 @@ package net.assembly.paperKotlin
 
 import org.bukkit.plugin.java.JavaPlugin
 
-class PaperKotlin : JavaPlugin() {
+internal class PaperKotlin : JavaPlugin() {
 
-    override fun onEnable() {
-        // Plugin startup logic
-    }
+    override fun onLoad() {}
 
-    override fun onDisable() {
-        // Plugin shutdown logic
-    }
+    override fun onEnable() {}
+
+    override fun onDisable() {}
+
 }
