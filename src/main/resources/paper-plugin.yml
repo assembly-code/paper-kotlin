@@ -1,0 +1,5 @@
+name: paper-kotlin
+version: '1.0.0'
+main: net.assembly.paperKotlin.PaperKotlin
+api-version: '1.21'
+authors: [ alexthegoood ]
