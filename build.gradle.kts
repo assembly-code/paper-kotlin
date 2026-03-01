@@ -36,13 +36,8 @@ tasks {
         )
     }
 
-    jar {
-        enabled = false
-    }
-
-    shadowJar {
-        archiveClassifier = ""
-    }
+    jar { enabled = false }
+    shadowJar { archiveClassifier = "" }
 
     processResources {
         filteringCharset = "UTF-8"
