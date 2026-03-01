@@ -1,0 +1,8 @@
+name: paper-kotlin
+description: ${description}
+version: ${version}
+authors: [ alexthegoood ]
+load: STARTUP
+main: com.github.assembly.paperKotlin.PaperKotlin
+api-version: ${minecraft}
+website: https://github.com/assembly-code/paper-kotlin

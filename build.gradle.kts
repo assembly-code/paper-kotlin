@@ -1,20 +1,17 @@
-import xyz.jpenilla.resourcefactory.bukkit.BukkitPluginYaml
-import xyz.jpenilla.resourcefactory.paper.paperPluginYaml
-
 plugins {
     alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.shadow)
     alias(libs.plugins.dokka)
-    alias(libs.plugins.resourceFactory)
-    alias(libs.plugins.runPaper)
+    alias(libs.plugins.paperWeight)
     `maven-publish`
 }
 
-group = "net.assembly.paperkotlin"
-description = ""
+group = "com.github.assembly.paperkotlin"
+description = "Kotlin library for simplify plugin development"
 version = "1.0.0"
 
-val minecraft = libs.versions.minecraft.get()
+val paperDevBundle = libs.versions.paperDevBundle.get()
+val minecraft = paperDevBundle.substringBefore('-')
 
 repositories {
     mavenCentral()
@@ -22,44 +19,41 @@ repositories {
 }
 
 dependencies {
-    compileOnly("io.papermc.paper:paper-api:$minecraft-R0.1-SNAPSHOT")
+    paperweight.paperDevBundle(paperDevBundle)
     api(libs.bundles.kotlin)
-    api(libs.bundles.kotlinx)
 }
 
 kotlin {
     jvmToolchain(21)
 }
 
-tasks.build {
-    dependsOn(
-        "shadowJar",
-        "kotlinSourcesJar",
-        "dokkaGenerate",
-        "dokkaGenerateHtml",
-    )
-}
+tasks {
+    build {
+        dependsOn("shadowJar",
+            "kotlinSourcesJar",
+            "dokkaGenerate",
+            "dokkaGenerateHtml",
+        )
+    }
 
-tasks.jar {
-    enabled = false
-}
+    jar {
+        enabled = false
+    }
 
-tasks.shadowJar {
-    archiveClassifier = null
-}
+    shadowJar {
+        archiveClassifier = ""
+    }
 
-val factory = paperPluginYaml {
-    name = project.name
-    description = project.description
-    version = project.version.toString()
-    author = "alexthegoood"
-
-    load = BukkitPluginYaml.PluginLoadOrder.STARTUP
-    main = "${project.group}.PaperKotlin"
-    apiVersion = minecraft
-    foliaSupported = true
-}.resourceFactory()
-
-sourceSets.main {
-    resourceFactory.factory(factory)
+    processResources {
+        filteringCharset = "UTF-8"
+        val properties = mapOf(
+            "description" to project.description,
+            "version" to project.version,
+            "minecraft" to minecraft,
+        )
+        inputs.properties(properties)
+        filesMatching("paper-plugin.yml") {
+            expand(properties)
+        }
+    }
 }

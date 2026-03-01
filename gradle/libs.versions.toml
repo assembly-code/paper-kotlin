@@ -7,9 +7,8 @@ kotlinx-datetime = "0.7.1"
 kotlinx-io = "0.9.0"
 dokka = "2.1.0"
 shadow = "9.3.1"
-resourceFactory = "1.3.1"
-runPaper = "3.0.2"
-minecraft = "1.21.11"
+paperWeight = "2.0.0-beta.19"
+paperDevBundle = "1.21.11-R0.1-SNAPSHOT"
 
 [libraries]
 kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
@@ -31,8 +30,7 @@ kotlinx-io-bytestring-jvm = { module = "org.jetbrains.kotlinx:kotlinx-io-bytestr
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
-resourceFactory = { id = "xyz.jpenilla.resource-factory", version.ref = "resourceFactory" }
-runPaper = { id = "xyz.jpenilla.run-paper", version.ref = "runPaper" }
+paperWeight = { id = "io.papermc.paperweight.userdev", version.ref = "paperWeight" }
 
 [bundles]
 kotlin = [
@@ -40,8 +38,6 @@ kotlin = [
     "kotlin-stdlib-jdk8",
     "kotlin-stdlib-jdk7",
     "kotlin-reflect",
-]
-kotlinx = [
     "kotlinx-coroutines-core",
     "kotlinx-coroutines-core-jvm",
     "kotlinx-coroutines-jdk8",
