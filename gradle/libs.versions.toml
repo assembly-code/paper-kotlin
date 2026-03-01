@@ -31,12 +31,6 @@ dokka = { module = "org.jetbrains.dokka:dokka-gradle-plugin", version.ref = "dok
 shadow = { module = "com.gradleup.shadow:shadow-gradle-plugin", version.ref = "shadow" }
 paperWeight = { module = "io.papermc.paperweight.userdev:io.papermc.paperweight.userdev.gradle.plugin", version.ref = "paperWeight" }
 
-[plugins]
-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
-dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
-shadow = { id = "com.gradleup.shadow", version.ref = "shadow" }
-paperWeight = { id = "io.papermc.paperweight.userdev", version.ref = "paperWeight" }
-
 [bundles]
 kotlin = [
     "kotlin-stdlib",
