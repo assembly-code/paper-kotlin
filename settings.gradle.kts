@@ -1,3 +1,3 @@
 rootProject.name = "paper-kotlin"
 
-include("paper")
+include("core", "paper")

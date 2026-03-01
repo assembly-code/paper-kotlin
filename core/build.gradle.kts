@@ -5,6 +5,9 @@ plugins {
 }
 
 dependencies {
-    api(project(":core"))
-    api(libs.bundles.kotlin)
+    implementation(libs.bundles.kotlin)
+}
+
+tasks.shadowJar {
+    minimizeJar = true
 }

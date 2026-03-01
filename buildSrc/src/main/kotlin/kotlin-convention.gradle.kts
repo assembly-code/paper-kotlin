@@ -27,4 +27,5 @@ tasks.jar {
 
 tasks.shadowJar {
     archiveClassifier = ""
+    minimizeJar = false
 }
