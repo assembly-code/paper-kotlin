@@ -8,7 +8,7 @@ plugins {
 
 group = "com.github.assembly.paperkotlin"
 description = "Kotlin library for simplify plugin development"
-version = "1.0.0"
+version = "0.1.0"
 
 val paperDevBundle = libs.versions.paperDevBundle.get()
 val minecraft = paperDevBundle.substringBefore('-')
