@@ -1,4 +1,4 @@
-package com.github.assembly.paperKotlin
+package com.github.assemblyDir.paperKotlin
 
 import org.bukkit.plugin.java.JavaPlugin
 
