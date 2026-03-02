@@ -9,5 +9,5 @@ dependencies {
 }
 
 tasks.shadowJar {
-    minimizeJar = true
+    minimize()
 }

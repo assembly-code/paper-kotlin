@@ -29,5 +29,4 @@ tasks.build {
 
 tasks.shadowJar {
     archiveClassifier = "shadow"
-    minimizeJar = false
 }
