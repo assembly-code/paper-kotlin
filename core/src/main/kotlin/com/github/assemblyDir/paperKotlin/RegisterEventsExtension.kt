@@ -27,3 +27,17 @@ fun PluginManager.registerEvents(
 ) = listeners.forEach { listener ->
     registerEvents(listener, plugin)
 }
+
+/**
+ * Registers one or more event listeners for the given plugin.
+ *
+ * @receiver [PluginManager] instance
+ * @param plugin [Plugin] instance
+ * @param listeners Iterable of [Listener] instances to register
+ */
+fun PluginManager.registerEvents(
+    plugin: Plugin,
+    listeners: Iterable<Listener>
+) = listeners.forEach { listener ->
+    registerEvents(listener, plugin)
+}
